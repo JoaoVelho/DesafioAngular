@@ -1,4 +1,8 @@
 <div class="container main-container">
+    <a *ngIf="isAdm" class="btn btn-primary" [routerLink]="['create']" >
+        <span class="fa fa-shopping-cart"> </span>
+        Criar novo produto
+    </a><br><br>
     <div class="row text-center">
         <div *ngFor="let product of products" class="col-md-4" style="padding-bottom: 30px;">
             <div class="card h-100">
@@ -8,6 +12,14 @@
                 <div class="card-body">
                     <div><h6>{{ product.description }}</h6></div>
                     <p><small>Unit: {{ product.unit }}</small></p>
+                    <a *ngIf="isAdm" class="btn btn-primary" [routerLink]="['edit', product.id]" >
+                        <span class="fa fa-shopping-cart"> </span>
+                        Editar
+                    </a>&nbsp;
+                    <button *ngIf="isAdm" class="btn btn-danger" (click)="delete(product.id)">
+                        <span class="fa fa-shopping-cart"> </span>
+                        Deletar
+                    </button>
                 </div>
             </div>
         </div>

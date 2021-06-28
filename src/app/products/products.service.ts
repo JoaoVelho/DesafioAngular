@@ -16,4 +16,42 @@ export class ProductsService {
             }
         );
     }
+
+    getProductById(id: string): Observable<any> {
+        return this.http.get<any>(
+            this.urlServiceV1 + 'products/' + id, 
+            { 
+                headers: new HttpHeaders().set('Authorization', `Bearer ${window.localStorage.getItem('token')}`)
+            }
+        );
+    }
+
+    createProduct(body: any): Observable<any> {
+        return this.http.post<any>(
+            this.urlServiceV1 + 'products/',
+            body,
+            { 
+                headers: new HttpHeaders().set('Authorization', `Bearer ${window.localStorage.getItem('token')}`)
+            }
+        );
+    }
+
+    editProduct(id: number, body: any): Observable<any> {
+        return this.http.put<any>(
+            this.urlServiceV1 + 'products/' + id,
+            body,
+            { 
+                headers: new HttpHeaders().set('Authorization', `Bearer ${window.localStorage.getItem('token')}`)
+            }
+        );
+    }
+
+    deleteProduct(id: string): Observable<any> {
+        return this.http.delete<any>(
+            this.urlServiceV1 + 'products/' + id,
+            { 
+                headers: new HttpHeaders().set('Authorization', `Bearer ${window.localStorage.getItem('token')}`)
+            }
+        );
+    }
 }

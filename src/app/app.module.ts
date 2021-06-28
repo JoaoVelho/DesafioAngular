@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/products.service';
 import { APP_BASE_HREF } from '@angular/common';
+import { CreateComponent } from './products/create/create.component';
+import { EditComponent } from './products/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { APP_BASE_HREF } from '@angular/common';
     LoginComponent,
     HomeComponent,
     NavComponent,
-    ProductsComponent
+    ProductsComponent,
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
