@@ -1,0 +1,15 @@
+<div class="container main-container">
+    <div class="row text-center">
+        <div *ngFor="let product of products" class="col-md-4" style="padding-bottom: 30px;">
+            <div class="card h-100">
+                <br>
+                <h4 class="card-title">{{ product.name | titlecase }}</h4>
+
+                <div class="card-body">
+                    <div><h6>{{ product.description }}</h6></div>
+                    <p><small>Unit: {{ product.unit }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
