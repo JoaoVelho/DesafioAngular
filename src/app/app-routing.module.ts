@@ -10,6 +10,9 @@ import { PurchasesComponent } from './purchases/purchases.component';
 import { RegisterComponent } from './register/register.component';
 import { EditStockComponent } from './stocks/edit/edit.component';
 import { StocksComponent } from './stocks/stocks.component';
+import { CreateSupplierComponent } from './suppliers/create/create.component';
+import { EditSupplierComponent } from './suppliers/edit/edit.component';
+import { SuppliersComponent } from './suppliers/suppliers.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +25,9 @@ const routes: Routes = [
   { path: 'purchases/create', component: CreatePurchaseComponent },
   { path: 'stocks', component: StocksComponent },
   { path: 'stocks/edit/:id', component: EditStockComponent },
+  { path: 'suppliers', component: SuppliersComponent },
+  { path: 'suppliers/create', component: CreateSupplierComponent },
+  { path: 'suppliers/edit/:id', component: EditSupplierComponent },
 ];
 
 @NgModule({

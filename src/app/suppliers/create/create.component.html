@@ -1,0 +1,65 @@
+<div class="container">
+    <h4 class="mb-3">Criar novo fornecedor</h4>
+    <form class="needs-validation" [formGroup]="form" (submit)="submit()">
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="name" class="form-label">Nome</label>
+                <input formControlName="name" type="text" class="form-control" id="name" placeholder="" value="" required>
+            </div>
+    
+            <div class="col-sm-6">
+                <label for="cnpj" class="form-label">CNPJ</label>
+                <input formControlName="cnpj" type="text" class="form-control" id="cnpj" placeholder="" value="" required>
+            </div>
+    
+            <div class="col-sm-6">
+                <label for="phone" class="form-label">Telefone</label>
+                <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="" value="" required>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="email" class="form-label">Email</label>
+                <input formControlName="email" type="text" class="form-control" id="email" placeholder="" value="" required>
+            </div>
+
+            <div formGroupName="address">
+                <div class="col-12">
+                    <label for="street" class="form-label">Logradouro</label>
+                    <input formControlName="street" type="text" class="form-control" id="street" placeholder="" value="" required>
+                </div><br>
+
+                <div class="col-12">
+                    <label for="number" class="form-label">Nº</label>
+                    <input formControlName="number" type="text" class="form-control" id="number" placeholder="" value="" required>
+                </div><br>
+
+                <div class="col-12">
+                    <label for="complement" class="form-label">Complemento</label>
+                    <input formControlName="complement" type="text" class="form-control" id="complement" placeholder="" value="" required>
+                </div><br>
+
+                <div class="col-12">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input formControlName="cep" type="text" class="form-control" id="cep" placeholder="" value="" required>
+                </div><br>
+
+                <div class="col-12">
+                    <label for="district" class="form-label">Bairro</label>
+                    <input formControlName="district" type="text" class="form-control" id="district" placeholder="" value="" required>
+                </div><br>
+
+                <div class="col-12">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input formControlName="city" type="text" class="form-control" id="city" placeholder="" value="" required>
+                </div><br>
+
+                <div class="col-12">
+                    <label for="state" class="form-label">Estado</label>
+                    <input formControlName="state" type="text" class="form-control" id="state" placeholder="" value="" required>
+                </div><br>
+            </div>
+        </div><br>
+    
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Criar fornecedor</button>
+    </form>
+</div><br>

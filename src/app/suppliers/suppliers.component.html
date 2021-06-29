@@ -1,0 +1,37 @@
+<div class="container main-container">
+    <h2 class="text-center">Fornecedores</h2>
+    <a *ngIf="isAdm" class="btn btn-primary" [routerLink]="['create']" >
+        <span class="fa fa-shopping-cart"> </span>
+        Criar novo fornecedor
+    </a><br><br>
+    <div class="row text-center">
+        <div *ngFor="let supplier of suppliers" class="col-md-4" style="padding-bottom: 30px;">
+            <div class="card h-100">
+                <br>
+                <h4 class="card-title">{{ supplier.name | titlecase }}</h4>
+                <h6>CNPJ: {{ supplier.cnpj }}</h6>
+                <hr>
+
+                <div class="card-body">
+                    <div><h6>Telefone: {{ supplier.phone }}</h6></div>
+                    <div><h6>Email: {{ supplier.email }}</h6></div>
+                    <h6><small>Logradouro: {{ supplier.address.street }}</small></h6>
+                    <h6><small>Nº: {{ supplier.address.number }}</small></h6>
+                    <h6><small>Complemento: {{ supplier.address.complement }}</small></h6>
+                    <h6><small>CEP: {{ supplier.address.cep }}</small></h6>
+                    <h6><small>Bairro: {{ supplier.address.district }}</small></h6>
+                    <h6><small>Cidade: {{ supplier.address.city }}</small></h6>
+                    <h6><small>Estado: {{ supplier.address.state }}</small></h6>
+                    <a *ngIf="isAdm" class="btn btn-primary" [routerLink]="['edit', supplier.id]" >
+                        <span class="fa fa-shopping-cart"> </span>
+                        Editar
+                    </a>&nbsp;
+                    <button *ngIf="isAdm" class="btn btn-danger" (click)="delete(supplier.id)">
+                        <span class="fa fa-shopping-cart"> </span>
+                        Deletar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
