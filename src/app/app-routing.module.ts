@@ -8,6 +8,8 @@ import { ProductsComponent } from './products/products.component';
 import { CreatePurchaseComponent } from './purchases/create/create.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { RegisterComponent } from './register/register.component';
+import { EditStockComponent } from './stocks/edit/edit.component';
+import { StocksComponent } from './stocks/stocks.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'products/edit/:id', component: EditProductComponent },
   { path: 'purchases', component: PurchasesComponent },
   { path: 'purchases/create', component: CreatePurchaseComponent },
+  { path: 'stocks', component: StocksComponent },
+  { path: 'stocks/edit/:id', component: EditStockComponent },
 ];
 
 @NgModule({

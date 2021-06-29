@@ -1,30 +1,28 @@
 import jwt_decode from 'jwt-decode';
 import { Component, OnInit } from '@angular/core';
-import { PurchasesService } from './purchases.service';
+import { StocksService } from './stocks.service';
 
 @Component({
-  selector: 'app-purchases',
-  templateUrl: './purchases.component.html',
-  styles: [
-  ]
+  selector: 'app-stocks',
+  templateUrl: './stocks.component.html'
 })
-export class PurchasesComponent implements OnInit {
+export class StocksComponent implements OnInit {
 
   constructor(
-    private purchasesService: PurchasesService
+    private stocksService: StocksService
   ) { }
 
-  public purchases: any[];
+  public stocks: any[];
   public isAdm: boolean = false;
 
   ngOnInit(): void {
     const token = window.localStorage.getItem('token') as string;
 
     if (token != null) {
-      this.purchasesService.getPurchases()
+      this.stocksService.getStocks()
         .subscribe(
-          purch => {
-            this.purchases = purch;
+          stock => {
+            this.stocks = stock;
           },
           error => console.log(error)
         )
@@ -35,4 +33,5 @@ export class PurchasesComponent implements OnInit {
         this.isAdm = true;
     }
   }
+
 }

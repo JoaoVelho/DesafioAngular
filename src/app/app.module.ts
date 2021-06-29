@@ -17,6 +17,9 @@ import { EditProductComponent } from './products/edit/edit.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { PurchasesService } from './purchases/purchases.service';
 import { CreatePurchaseComponent } from './purchases/create/create.component';
+import { StocksComponent } from './stocks/stocks.component';
+import { StocksService } from './stocks/stocks.service';
+import { EditStockComponent } from './stocks/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { CreatePurchaseComponent } from './purchases/create/create.component';
     CreateProductComponent,
     EditProductComponent,
     PurchasesComponent,
-    CreatePurchaseComponent
+    CreatePurchaseComponent,
+    StocksComponent,
+    EditStockComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { CreatePurchaseComponent } from './purchases/create/create.component';
   providers: [
     ProductsService,
     PurchasesService,
+    StocksService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]

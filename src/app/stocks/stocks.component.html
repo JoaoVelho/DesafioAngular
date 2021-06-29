@@ -1,0 +1,21 @@
+<div class="container main-container">
+    <h2 class="text-center">Estoques</h2><br>
+    <div class="row text-center">
+        <div *ngFor="let stock of stocks" class="col-md-4" style="padding-bottom: 30px;">
+            <div class="card h-100">
+                <br>
+                <h4 class="card-title">Id produto: {{ stock.productId }}</h4>
+                <hr>
+
+                <div class="card-body">
+                        <div><h6>Quantidade: {{ stock.quantity }}</h6></div>
+                        <p><small>Valor de venda: {{ stock.sellValue }}</small></p>
+                        <a *ngIf="isAdm" class="btn btn-primary" [routerLink]="['edit', stock.id]" >
+                            <span class="fa fa-shopping-cart"> </span>
+                            Editar
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
