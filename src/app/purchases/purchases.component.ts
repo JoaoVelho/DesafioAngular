@@ -1,30 +1,34 @@
 import jwt_decode from 'jwt-decode';
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from './products.service';
 import { Router } from '@angular/router';
+import { PurchasesService } from './purchases.service';
+import { ProductsService } from '../products/products.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html'
+  selector: 'app-purchases',
+  templateUrl: './purchases.component.html',
+  styles: [
+  ]
 })
-export class ProductsComponent implements OnInit {
+export class PurchasesComponent implements OnInit {
 
   constructor(
-    private productsService: ProductsService,
-    private router: Router
+    private purchasesService: PurchasesService,
+    private productsService: ProductsService
   ) { }
 
-  public products: any[];
+  public purchases: any[];
+  public newItem: any[];
   public isAdm: boolean = false;
 
   ngOnInit(): void {
     const token = window.localStorage.getItem('token') as string;
 
     if (token != null) {
-      this.productsService.getProducts()
+      this.purchasesService.getPurchases()
         .subscribe(
-          prod => {
-            this.products = prod;
+          purch => {
+            this.purchases = purch;
           },
           error => console.log(error)
         )
@@ -34,15 +38,5 @@ export class ProductsComponent implements OnInit {
       if (tokenDecoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'Admin')
         this.isAdm = true;
     }
-  }
-
-  delete(id: string): void {
-    this.productsService.deleteProduct(id)
-      .subscribe(
-        (res: any) => {
-          this.ngOnInit()
-        },
-        error => console.log(error)
-      )
   }
 }

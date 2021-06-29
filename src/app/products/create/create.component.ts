@@ -8,7 +8,7 @@ import { ProductsService } from '../products.service';
   selector: 'app-create',
   templateUrl: './create.component.html'
 })
-export class CreateComponent implements OnInit {
+export class CreateProductComponent implements OnInit {
   form: FormGroup;
 
   constructor(

@@ -8,7 +8,7 @@ import { ProductsService } from '../products.service';
   selector: 'app-edit',
   templateUrl: './edit.component.html'
 })
-export class EditComponent implements OnInit {
+export class EditProductComponent implements OnInit {
   form: FormGroup;
   public id: string;
 

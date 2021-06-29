@@ -12,8 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/products.service';
 import { APP_BASE_HREF } from '@angular/common';
-import { CreateComponent } from './products/create/create.component';
-import { EditComponent } from './products/edit/edit.component';
+import { CreateProductComponent } from './products/create/create.component';
+import { EditProductComponent } from './products/edit/edit.component';
+import { PurchasesComponent } from './purchases/purchases.component';
+import { PurchasesService } from './purchases/purchases.service';
+import { CreatePurchaseComponent } from './purchases/create/create.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,10 @@ import { EditComponent } from './products/edit/edit.component';
     HomeComponent,
     NavComponent,
     ProductsComponent,
-    CreateComponent,
-    EditComponent
+    CreateProductComponent,
+    EditProductComponent,
+    PurchasesComponent,
+    CreatePurchaseComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { EditComponent } from './products/edit/edit.component';
   ],
   providers: [
     ProductsService,
+    PurchasesService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]

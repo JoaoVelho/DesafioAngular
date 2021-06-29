@@ -1,3 +1,4 @@
+import jwt_decode from 'jwt-decode';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -29,6 +30,11 @@ export class LoginComponent implements OnInit {
       .subscribe((res: any) => {
         window.localStorage.setItem('token', res.token)
         Emitters.authEmitter.emit(true)
+
+        const tokenDecoded: any = jwt_decode(res.token);
+        if (tokenDecoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'Admin')
+          Emitters.admEmitter.emit(true)
+
         this.router.navigate(['/'])
       },
       err => {

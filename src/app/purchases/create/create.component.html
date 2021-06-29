@@ -1,0 +1,28 @@
+<div class="container">
+    <h4 class="mb-3">Criar nova compra</h4>
+    <form class="needs-validation" [formGroup]="form" (submit)="submit()">
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="supplierId" class="form-label">Id do fornecedor</label>
+                <input formControlName="supplierId" type="text" class="form-control" id="supplierId" placeholder="" value="" required>
+            </div>
+    
+            <div class="col-12">
+                <label for="productId" class="form-label">Id do produto</label>
+                <input formControlName="productId" type="text" class="form-control" id="productId" placeholder="" value="" required>
+            </div>
+    
+            <div class="col-12">
+                <label for="quantity" class="form-label">Quantidade</label>
+                <input formControlName="quantity" type="text" class="form-control" id="quantity" placeholder="" value="" required>
+            </div>
+
+            <div class="col-12">
+                <label for="value" class="form-label">Valor</label>
+                <input formControlName="value" type="text" class="form-control" id="value" placeholder="" value="" required>
+            </div>
+        </div><br>
+    
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Criar produto</button>
+    </form>
+</div>
