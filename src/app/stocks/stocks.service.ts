@@ -35,4 +35,13 @@ export class StocksService {
             }
         );
     }
+
+    getStockByProductId(productId: string): Observable<any> {
+        return this.http.get<any>(
+            this.urlServiceV1 + 'stocks/product/' + productId, 
+            { 
+                headers: new HttpHeaders().set('Authorization', `Bearer ${window.localStorage.getItem('token')}`)
+            }
+        );
+    }
 }

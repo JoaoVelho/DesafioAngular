@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/products.service';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, registerLocaleData } from '@angular/common';
 import { CreateProductComponent } from './products/create/create.component';
 import { EditProductComponent } from './products/edit/edit.component';
 import { PurchasesComponent } from './purchases/purchases.component';
@@ -26,6 +26,10 @@ import { CreateSupplierComponent } from './suppliers/create/create.component';
 import { EditSupplierComponent } from './suppliers/edit/edit.component';
 import { SellingsComponent } from './sellings/sellings.component';
 import { SellingsService } from './sellings/sellings.service';
+import { BuyComponent } from './home/buy/buy.component';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -44,7 +48,8 @@ import { SellingsService } from './sellings/sellings.service';
     SuppliersComponent,
     CreateSupplierComponent,
     EditSupplierComponent,
-    SellingsComponent
+    SellingsComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,

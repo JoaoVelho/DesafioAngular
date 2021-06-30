@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="container main-container">
+    <h2 class="text-center">Loja</h2>
+    <br>
+    <div class="row text-center">
+        <div *ngFor="let product of products" class="col-md-4" style="padding-bottom: 30px;">
+            <div class="card h-100">
+                <br>
+                <h4 class="card-title">{{ product.name | titlecase }}</h4>
+                <hr>
+
+                <div class="card-body">
+                    <div><h6>{{ product.description }}</h6></div>
+                    <a class="btn btn-primary" [routerLink]="['buy', product.id]" >
+                        <span class="fa fa-shopping-cart"> </span>
+                        Comprar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

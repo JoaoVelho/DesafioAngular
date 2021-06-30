@@ -1,0 +1,14 @@
+<div class="container">
+    <h4 *ngIf="product && stock" class="mb-3">Comprar {{ product.name }}: {{ stock.sellValue | currency:'BRL':'symbol':'1.2-2':'pt' }}</h4>
+    <h6 *ngIf="stock">{{ stock.quantity }} deste produto em estoque</h6>
+    <form *ngIf="form" [formGroup]="form" (submit)="submit()">
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="quantity" class="form-label">Quantidade</label>
+                <input formControlName="quantity" type="number" class="form-control" id="quantity" placeholder="" value="" required>
+            </div>
+        </div><br>
+    
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Comprar produto</button>
+    </form>
+</div>
