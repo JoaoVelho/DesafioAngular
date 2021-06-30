@@ -4,12 +4,9 @@ import { SuppliersService } from './suppliers.service';
 
 @Component({
   selector: 'app-suppliers',
-  templateUrl: './suppliers.component.html',
-  styles: [
-  ]
+  templateUrl: './suppliers.component.html'
 })
 export class SuppliersComponent implements OnInit {
-
   constructor(
     private suppliersService: SuppliersService
   ) { }

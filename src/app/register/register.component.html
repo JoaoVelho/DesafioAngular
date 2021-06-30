@@ -1,19 +1,62 @@
 <main class="form-signin">
     <form [formGroup]="form" (submit)="submit()">
-        <h1 class="h3 mb-3 fw-normal">Please register</h1>
+        <h1 class="h3 mb-3 fw-normal">Registre-se</h1>
 
         <div class="form-floating">
-            <input formControlName="name" type="text" class="form-control" id="floatingName" placeholder="Name">
-            <label for="floatingName">Name</label>
+            <input formControlName="name" type="text" class="form-control" id="floatingName" placeholder="Nome">
+            <label for="floatingName">Nome</label>
         </div>
         <div class="form-floating">
-            <input formControlName="email" type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-            <label for="floatingEmail">Email address</label>
+            <input formControlName="cpf" type="text" class="form-control" id="floatingCpf" placeholder="CPF">
+            <label for="floatingCpf">CPF</label>
         </div>
         <div class="form-floating">
-            <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input formControlName="phoneNumber" type="text" class="form-control" id="floatingPhone" placeholder="Telefone">
+            <label for="floatingPhone">Telefone</label>
         </div>
+        <div class="form-floating">
+            <input formControlName="email" type="text" class="form-control" id="floatingEmail" placeholder="name@example.com">
+            <label for="floatingEmail">Email</label>
+        </div>
+        <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+            <label for="floatingPassword">Senha</label>
+        </div>
+        <div class="form-floating">
+            <input formControlName="confirmPassword" type="password" class="form-control" id="floatingConfirmPassword" placeholder="Senha">
+            <label for="floatingConfirmPassword">Confirme a senha</label>
+        </div>
+
+        <div formGroupName="address">
+            <div class="form-floating">
+                <input formControlName="street" type="text" class="form-control" id="floatingStreet" placeholder="Logradouro">
+                <label for="floatingStreet">Logradouro</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="number" type="number" class="form-control" id="floatingNumber" placeholder="Nº">
+                <label for="floatingNumber">Nº</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="complement" type="text" class="form-control" id="floatingComplement" placeholder="Complemento">
+                <label for="floatingComplement">Complemento</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="cep" type="text" class="form-control" id="floatingCep" placeholder="CEP">
+                <label for="floatingCep">CEP</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="district" type="text" class="form-control" id="floatingDistrict" placeholder="Bairro">
+                <label for="floatingDistrict">Bairro</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="city" type="text" class="form-control" id="floatingCity" placeholder="Cidade">
+                <label for="floatingCity">Cidade</label>
+            </div>
+            <div class="form-floating">
+                <input formControlName="state" type="text" class="form-control" id="floatingState" placeholder="Estado">
+                <label for="floatingState">Estado</label>
+            </div>
+        </div><br>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     </form>
