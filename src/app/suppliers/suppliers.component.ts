@@ -13,6 +13,7 @@ export class SuppliersComponent implements OnInit {
 
   public suppliers: any[];
   public isAdm: boolean = false;
+  public fail: boolean = false;
 
   ngOnInit(): void {
     const token = window.localStorage.getItem('token') as string;
@@ -21,9 +22,13 @@ export class SuppliersComponent implements OnInit {
       this.suppliersService.getSuppliers()
         .subscribe(
           sup => {
-            this.suppliers = sup;
+            this.suppliers = sup
+            this.fail = false
           },
-          error => console.log(error)
+          error => {
+            console.log(error)
+            this.fail = true
+          }
         )
 
       const tokenDecoded: any = jwt_decode(token);

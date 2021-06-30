@@ -1,6 +1,6 @@
 <div class="container main-container">
     <h2 class="text-center">Produtos</h2>
-    <a *ngIf="isAdm" class="btn btn-primary" [routerLink]="['create']" >
+    <a *ngIf="isAdm && !fail" class="btn btn-primary" [routerLink]="['create']" >
         <span class="fa fa-shopping-cart"> </span>
         Criar novo produto
     </a><br><br>

@@ -4,9 +4,7 @@ import { PurchasesService } from './purchases.service';
 
 @Component({
   selector: 'app-purchases',
-  templateUrl: './purchases.component.html',
-  styles: [
-  ]
+  templateUrl: './purchases.component.html'
 })
 export class PurchasesComponent implements OnInit {
 
@@ -16,6 +14,7 @@ export class PurchasesComponent implements OnInit {
 
   public purchases: any[];
   public isAdm: boolean = false;
+  public fail: boolean = false;
 
   ngOnInit(): void {
     const token = window.localStorage.getItem('token') as string;
@@ -25,8 +24,12 @@ export class PurchasesComponent implements OnInit {
         .subscribe(
           purch => {
             this.purchases = purch;
+            this.fail = false
           },
-          error => console.log(error)
+          error => {
+            console.log(error)
+            this.fail = true
+          }
         )
 
       const tokenDecoded: any = jwt_decode(token);

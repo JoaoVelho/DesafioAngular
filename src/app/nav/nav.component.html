@@ -15,6 +15,12 @@
                 <li *ngIf="isAdm" class="nav-item">
                     <a class="nav-link" aria-current="page" [routerLink]="['/suppliers']">Fornecedores</a>
                 </li>
+                <li *ngIf="isAdm" class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['/sellings']">Vendas</a>
+                </li>
+                <li *ngIf="!isAdm" class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['/sellings']">Suas compras</a>
+                </li>
             </ul>
         </div>
 

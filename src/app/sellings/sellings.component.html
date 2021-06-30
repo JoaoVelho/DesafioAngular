@@ -1,0 +1,27 @@
+<div class="container main-container">
+    <h2 *ngIf="!isAdm" class="text-center">Suas compras</h2>
+    <h2 *ngIf="isAdm" class="text-center">Vendas</h2><br>
+    <div class="row text-center">
+        <div *ngFor="let selling of sellings" class="col-md-4" style="padding-bottom: 30px;">
+            <div class="card h-100">
+                <br *ngIf="isAdm || selling.confirmed">
+                <h4 *ngIf="isAdm" class="card-title">Id cliente: {{ selling.clientId }}</h4>
+                <h6 *ngIf="selling.confirmed" class="card-title">Confirmado</h6>
+                <hr>
+
+                <div class="card-body">
+                    <div *ngFor="let item of selling.sellingItems">
+                        <div><h6>Id produto: {{ item.productId }}</h6></div>
+                        <h6><small>Quantidade: {{ item.quantity }}</small></h6>
+                        <p><small>Valor: {{ item.value }}</small></p>
+                        <hr>
+                    </div>
+                    <button *ngIf="!isAdm && !selling.confirmed" class="btn btn-warning" (click)="confirm(selling.id)">
+                        <span class="fa fa-shopping-cart"> </span>
+                        Confirmar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
