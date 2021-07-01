@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit {
     private productsService: ProductsService
   ) { }
 
-  public products: any[];
-  public isAdm: boolean = false;
+  public products: any[]
+  public isAdm: boolean = false
+  public fail: boolean = false
 
   ngOnInit(): void {
     const token = window.localStorage.getItem('token') as string;
@@ -22,10 +23,12 @@ export class HomeComponent implements OnInit {
       this.productsService.getProducts()
         .subscribe(
           prod => {
-            this.products = prod;
+            this.products = prod
+            this.fail = false
           },
           error => {
             console.log(error)
+            this.fail = true
           }
         )
 
@@ -33,6 +36,8 @@ export class HomeComponent implements OnInit {
 
       if (tokenDecoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'Admin')
         this.isAdm = true;
+    } else {
+      this.fail = true
     }
   }
 

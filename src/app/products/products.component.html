@@ -1,5 +1,6 @@
 <div class="container main-container">
     <h2 class="text-center">Produtos</h2>
+    <p *ngIf="fail" class="lead mb-4 text-center"><br>Registre-se ou faça login.</p>
     <a *ngIf="isAdm && !fail" class="btn btn-primary" [routerLink]="['create']" >
         <span class="fa fa-shopping-cart"> </span>
         Criar novo produto

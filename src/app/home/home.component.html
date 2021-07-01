@@ -1,6 +1,17 @@
 <div class="container main-container">
-    <h2 class="text-center">Loja</h2>
+    <h2 *ngIf="!fail" class="text-center">Loja</h2>
     <br>
+    <div *ngIf="fail" class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Loja</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Encontre todos os produtos que você deseja na Loja. 
+                Porém antes disso registre-se ou faça login.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3" [routerLink]="['/register']">Registrar</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" [routerLink]="['/login']">Login</button>
+            </div>
+        </div>
+    </div>
     <div class="row text-center">
         <div *ngFor="let product of products" class="col-md-4" style="padding-bottom: 30px;">
             <div class="card h-100">
@@ -9,8 +20,10 @@
                 <hr>
 
                 <div class="card-body">
-                    <div><h6>{{ product.description }}</h6></div>
-                    <a class="btn btn-primary" [routerLink]="['buy', product.id]" >
+                    <div>
+                        <p>{{ product.description }}</p>
+                    </div>
+                    <a class="btn btn-primary" [routerLink]="['buy', product.id]">
                         <span class="fa fa-shopping-cart"> </span>
                         Comprar
                     </a>

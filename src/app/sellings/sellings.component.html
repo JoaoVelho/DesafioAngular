@@ -1,6 +1,7 @@
 <div class="container main-container">
     <h2 *ngIf="!isAdm" class="text-center">Suas compras</h2>
     <h2 *ngIf="isAdm" class="text-center">Vendas</h2><br>
+    <p *ngIf="fail" class="lead mb-4 text-center">Registre-se ou faça login.</p>
     <div class="row text-center">
         <div *ngFor="let selling of sellings" class="col-md-4" style="padding-bottom: 30px;">
             <div class="card h-100">

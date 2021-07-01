@@ -36,6 +36,8 @@ export class ProductsComponent implements OnInit {
 
       if (tokenDecoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'Admin')
         this.isAdm = true;
+    } else {
+      this.fail = true
     }
   }
 

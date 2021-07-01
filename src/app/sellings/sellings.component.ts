@@ -14,6 +14,7 @@ export class SellingsComponent implements OnInit {
 
   public sellings: any[];
   public isAdm: boolean = false;
+  public fail: boolean = false;
 
   ngOnInit(): void {
     const token = window.localStorage.getItem('token') as string;
@@ -22,15 +23,21 @@ export class SellingsComponent implements OnInit {
       this.sellingsService.getSellings()
         .subscribe(
           sell => {
-            this.sellings = sell;
+            this.sellings = sell
+            this.fail = false
           },
-          error => console.log(error)
+          error => {
+            console.log(error)
+            this.fail = true
+          }
         )
 
       const tokenDecoded: any = jwt_decode(token);
 
       if (tokenDecoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'Admin')
         this.isAdm = true;
+    } else {
+      this.fail = true
     }
   }
 
